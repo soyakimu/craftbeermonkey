@@ -1,0 +1,136 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 14px;
+  /*IE9以前に対応する*/
+  font-size: 0.875rem;
+  letter-spacing: 0.2em;
+  color: #222222;
+  background-repeat: repeat;
+  background-image: url(../img/bg.png);
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+@media screen and (max-width: 559px) {
+  body h2,
+body div,
+body p {
+    font-size: 1.3rem;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  min-width: 1000px;
+  overflow-x: hidden;
+}
+@media screen and (max-width: 559px) {
+  .wrapper {
+    min-width: 100%;
+  }
+}
+
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+h2 {
+  text-align: center;
+  font-size: 30px;
+  line-height: 1.8;
+}
+h2 .highlight {
+  border-bottom: 8px solid #fff300;
+  -o-border-image: linear-gradient(75deg, #fff300 0%, #ffd676 50%, #ffc900 100%);
+     border-image: linear-gradient(75deg, #fff300 0%, #ffd676 50%, #ffc900 100%);
+  border-image-slice: 1;
+}
+
+.section__inner {
+  margin: 0 auto;
+  padding: 0 4vw;
+}
+
+.mv {
+  background: #fff300;
+  background: linear-gradient(75deg, #fff300 0%, #ffd676 50%, #ffc900 100%);
+}
+.mv__ttl {
+  width: 500px;
+  margin: 0 auto 40px;
+}
+@media screen and (max-width: 559px) {
+  .mv__ttl {
+    width: 300px;
+  }
+}
+
+.stampInfo {
+  width: 600px;
+  margin: 0 auto 40px;
+}
+@media screen and (max-width: 559px) {
+  .stampInfo {
+    width: 300px;
+  }
+}
+.stampInfo__inner {
+  border-radius: 8px;
+  background-color: white;
+  border: 8px solid #fff300;
+  -o-border-image: linear-gradient(75deg, #fff300 0%, #ffd676 50%, #ffc900 100%);
+     border-image: linear-gradient(75deg, #fff300 0%, #ffd676 50%, #ffc900 100%);
+  border-image-slice: 1;
+}
+.stampInfo__inner .imgList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.stampInfo__inner .imgList img {
+  width: 200px;
+  padding: 20px;
+}
+@media screen and (max-width: 559px) {
+  .stampInfo__inner .imgList img {
+    width: 140px;
+    padding: 10px;
+  }
+}
+.stampInfo__inner .btn {
+  display: block;
+  background: #fff300;
+  background: linear-gradient(75deg, #fff300 0%, #ffd676 50%, #ffc900 100%);
+  text-align: center;
+  padding: 24px;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.sns {
+  margin: 0 auto 40px;
+}
+.sns .instagram-media {
+  margin: 0 auto !important;
+}
+@media screen and (max-width: 559px) {
+  .sns .instagram-media {
+    width: 300px !important;
+  }
+}
+
+.footer {
+  text-align: center;
+  padding: 30px;
+}

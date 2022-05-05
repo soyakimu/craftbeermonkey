@@ -1,0 +1,202 @@
+//*------------------*
+//*  変数管理
+//*------------------*
+
+//color
+$color-black: #222222;
+$color-dark-black: #111111;
+$color-white: #ccc;
+$color-gray: #333333;
+$color-green: #50e3c2;
+$color-dark-green: #1b423d;
+
+//font-family
+//-->ヒラギノver.
+$font-main: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",
+  Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+
+//-->游ゴシックver.
+// $font-main:"游ゴシック Medium","Yu Gothic Medium","游ゴシック体",YuGothic,sans-serif;
+
+//*------------------*
+//*  レスポンシブ定義
+//*------------------*
+
+//ブレイクポイント
+$tb: 959px; //タブレット
+$mb: 559px; //スマホ
+
+//@mediaのフォーマット
+//タブレット
+@mixin mobile {
+  @media screen and (max-width: $tb) {
+    @content;
+  }
+}
+//スマホ
+@mixin mobile {
+  @media screen and (max-width: $mb) {
+    @content;
+  }
+}
+
+//*------------------*
+//*  font-size定義
+//*------------------*
+//$sizeにpx表示を入れて使う
+@mixin rem($size) {
+  font-size: $size + px; /*IE9以前に対応する*/
+  font-size: ($size / 16) + rem;
+}
+
+//*------------------*
+//*  base(共通)
+//*------------------*
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  @include rem(14);
+  letter-spacing: 0.2em;
+  color: $color-black;
+  background-repeat: repeat;
+  background-image: url(../img/bg.png);
+  font-family: $font-main;
+  h2,
+  div,
+  p {
+    @include mobile {
+      font-size: 1.3rem;
+    }
+  }
+}
+.wrapper {
+  width: 100%;
+  min-width: 1000px;
+  overflow-x: hidden;
+  @include mobile {
+    min-width: 100%;
+  }
+}
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+//sectionの共通タイトル設定
+h2 {
+  text-align: center;
+  font-size: 30px;
+  line-height: 1.8;
+  .highlight {
+    border-bottom: 8px solid rgb(255, 243, 0);
+    border-image: linear-gradient(
+      75deg,
+      rgba(255, 243, 0, 1) 0%,
+      rgba(255, 214, 118, 1) 50%,
+      rgba(255, 201, 0, 1) 100%
+    );
+    border-image-slice: 1;
+  }
+}
+
+//sectionの共通inner設定
+.section__inner {
+  margin: 0 auto;
+  padding: 0 4vw;
+}
+
+//*------------------*
+//*  mainVisual
+//*------------------*
+
+.mv {
+  background: rgb(255, 243, 0);
+  background: linear-gradient(
+    75deg,
+    rgba(255, 243, 0, 1) 0%,
+    rgba(255, 214, 118, 1) 50%,
+    rgba(255, 201, 0, 1) 100%
+  );
+  &__ttl {
+    width: 500px;
+    margin: 0 auto 40px;
+    @include mobile {
+      width: 300px;
+    }
+  }
+}
+
+//*------------------*
+//*  stampInfo
+//*------------------*
+
+.stampInfo {
+  width: 600px;
+  margin: 0 auto 40px;
+  @include mobile {
+    width: 300px;
+  }
+  &__inner {
+    border-radius: 8px;
+    background-color: white;
+    border: 8px solid rgb(255, 243, 0);
+    border-image: linear-gradient(
+      75deg,
+      rgba(255, 243, 0, 1) 0%,
+      rgba(255, 214, 118, 1) 50%,
+      rgba(255, 201, 0, 1) 100%
+    );
+    border-image-slice: 1;
+    .imgList {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      img {
+        width: 200px;
+        padding: 20px;
+        @include mobile {
+          width: 140px;
+          padding: 10px;
+        }
+      }
+    }
+    .btn {
+      display: block;
+      background: rgb(255, 243, 0);
+      background: linear-gradient(
+        75deg,
+        rgba(255, 243, 0, 1) 0%,
+        rgba(255, 214, 118, 1) 50%,
+        rgba(255, 201, 0, 1) 100%
+      );
+      text-align: center;
+      padding: 24px;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+}
+
+//*------------------*
+//*  sns
+//*------------------*
+.sns {
+  margin: 0 auto 40px;
+  .instagram-media {
+    margin: 0 auto !important;
+    @include mobile {
+      width: 300px !important;
+    }
+  }
+}
+
+//*------------------*
+//*  Footer
+//*------------------*
+.footer {
+  text-align: center;
+  padding: 30px;
+}
